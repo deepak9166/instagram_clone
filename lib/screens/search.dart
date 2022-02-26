@@ -29,12 +29,12 @@ class SearchScreen extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Image.network(
-                        linkTest2,
+                        postlinksList[index],
                         fit: BoxFit.fill,
                       ),
                     );
                   },
-                  childCount: 20,
+                  childCount: postlinksList.length,
                 ),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     childAspectRatio: 1,

@@ -4,15 +4,17 @@ import 'package:insta_clone/util/constant.dart';
 
 class CircleStatusImage extends StatelessWidget {
   final int currentIndex;
-  const CircleStatusImage({Key? key, required this.currentIndex})
+  final String currentImage;
+  const CircleStatusImage(
+      {Key? key, required this.currentIndex, required this.currentImage})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return statusCircle(currentIndex);
+    return statusCircle(currentIndex, currentImage);
   }
 
-  Widget statusCircle(int index) {
+  Widget statusCircle(int index, String img) {
     return SizedBox(
       width: 80,
       child: Stack(
@@ -27,11 +29,12 @@ class CircleStatusImage extends StatelessWidget {
                 children: [
                   CircleImage(
                     height: 60,
+                    image: img,
                   ),
                   const Padding(
                     padding: EdgeInsets.all(4.0),
                     child: Text(
-                      "It's_servan_me sdfsfs ",
+                      "It's_servan_me ",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -72,7 +75,9 @@ class CircleStatusImage extends StatelessWidget {
 
 class CircleImage extends StatelessWidget {
   final double height;
-  const CircleImage({Key? key, required this.height}) : super(key: key);
+  final String image;
+  const CircleImage({Key? key, required this.height, required this.image})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +104,7 @@ class CircleImage extends StatelessWidget {
                     child: CircleAvatar(
                       radius: height / 2,
                       foregroundImage: NetworkImage(
-                        linktest,
+                        image,
                         // fit: BoxFit.fill,
                       ),
                     )),

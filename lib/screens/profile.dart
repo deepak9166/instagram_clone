@@ -69,6 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     itemBuilder: (context, index) {
                       return CircleStatusImage(
                         currentIndex: index,
+                        currentImage: profileLinkList[index],
                       );
                     },
                     itemCount: 20,
@@ -210,12 +211,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 return Padding(
                   padding: const EdgeInsets.all(1.0),
                   child: Image.network(
-                    linkTest2,
+                    postlinksList[index],
                     fit: BoxFit.fill,
                   ),
                 );
               },
-              childCount: 20,
+              childCount: postlinksList.length,
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 childAspectRatio: 1,

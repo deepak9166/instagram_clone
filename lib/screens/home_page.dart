@@ -47,31 +47,33 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   return CircleStatusImage(
                     currentIndex: index,
+                    currentImage: profileLinkList[index],
                   );
                 },
-                itemCount: 20,
+                itemCount: profileLinkList.length,
               ),
             )),
             SliverList(
               delegate:
                   SliverChildBuilderDelegate((BuildContext context, int index) {
-                return postView();
-              }, childCount: 20),
+                return postView(postlinksList[index]);
+              }, childCount: postlinksList.length),
             )
           ],
         ));
   }
 
-  Widget postView() {
+  Widget postView(String postImage) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const ListTile(
+        ListTile(
           minLeadingWidth: 45,
           horizontalTitleGap: 10,
           leading: CircleImage(
             height: 45,
+            image: postImage,
           ),
           title: Text(
             "deep_offic",
@@ -79,7 +81,11 @@ class _HomePageState extends State<HomePage> {
           ),
           trailing: const Icon(Icons.more_vert),
         ),
-        Image.network(linktest),
+        Image.network(
+          postImage,
+          width: double.infinity,
+          fit: BoxFit.fill,
+        ),
         ListTile(
           title: Row(
             children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/componant/circle_image.dart';
+import 'package:insta_clone/util/constant.dart';
 
 class ActivityScreen extends StatelessWidget {
   const ActivityScreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class ActivityScreen extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-        itemCount: 16,
+        itemCount: profileLinkList.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Text("sandeep_solanki start following you."),
@@ -32,6 +33,7 @@ class ActivityScreen extends StatelessWidget {
             subtitle: Text("Follow back"),
             leading: CircleImage(
               height: 45,
+              image: profileLinkList[index],
             ),
           );
         },
