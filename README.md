@@ -2,6 +2,6 @@
 
 # Localization In Android
 
-## :camera_flash: Video
+## :Instagram : Images
 ![video](example/instaclonegif.gif)
 ![video](example/gif2.gif)
